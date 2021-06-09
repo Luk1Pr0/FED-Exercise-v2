@@ -189,3 +189,23 @@ hr {
 		filter: brightness(110%);
 	}
 }
+
+.banner {
+	background: rgb(253, 255, 165);
+	color: $primary-color;
+	font-size: 0.8rem;
+	padding: 5px;
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	text-align: center;
+	transform:  translate(35%, 100%) rotate(45deg);
+	text-transform: uppercase;
+
+	@media screen and (max-width: $mobile-break) {
+		transform:  translate(40%, 140%) rotate(45deg);
+	}
+}

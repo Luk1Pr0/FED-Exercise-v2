@@ -233,4 +233,28 @@ hr {
   -webkit-filter: brightness(110%);
           filter: brightness(110%);
 }
+
+.banner {
+  background: #fdffa5;
+  color: #313131;
+  font-size: 0.8rem;
+  padding: 5px;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  text-align: center;
+  -webkit-transform: translate(35%, 100%) rotate(45deg);
+          transform: translate(35%, 100%) rotate(45deg);
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 1400px) {
+  .banner {
+    -webkit-transform: translate(40%, 140%) rotate(45deg);
+            transform: translate(40%, 140%) rotate(45deg);
+  }
+}
 /*# sourceMappingURL=style.css.map */
