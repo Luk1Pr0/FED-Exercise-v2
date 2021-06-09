@@ -161,7 +161,12 @@ hr {
 .text__container {
   padding: 0.5rem 2rem 0.5rem 3rem;
   position: relative;
-  margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .text__container {
+    margin-bottom: 3rem;
+  }
 }
 
 .icon__container {
