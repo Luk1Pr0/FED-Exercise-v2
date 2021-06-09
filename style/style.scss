@@ -1,0 +1,191 @@
+// Variables
+$border-color: rgba(126, 126, 126, 0.8);
+$primary-backround: rgb(240, 240, 240);
+$primary-color: rgb(49, 49, 49);
+$secondary-color: rgb(60, 60, 60);
+$btn-background: rgb(223, 223, 223);
+$box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.1);
+
+$element-padding: 0.5rem 1rem;
+$mobile-break: 1400px;
+
+// Mixins
+@mixin flex($direction: row, $justify: center, $align: center) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	padding: 3rem;
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	@include flex();
+
+	@media screen and (max-width: $mobile-break) {
+		padding: 1rem;
+	}
+}
+
+// Card container styling
+.card__container {
+	width: 80%;
+	min-height: 40vh;
+	@include flex();
+	flex-wrap: wrap;
+}
+
+// Card styling
+.card {
+	margin: 1rem;
+	@include flex(column, space-between, center);
+	min-width: 15vw;
+	min-height: 25rem;
+	border: 1px solid $border-color;
+	border-top: none;
+	position: relative;
+	box-shadow: $box-shadow;
+	overflow: hidden;
+	transition: transform 0.2s ease;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+
+	// Card orange label
+	&--orange::before {
+		position: absolute;
+		top: 0;
+		z-index: 5;
+		content: '';
+		width: 100%;
+		height: 5px;
+		background: rgb(255, 81, 0);
+		padding: 0;
+	}
+
+	// Card blue label
+	&--blue::before {
+		position: absolute;
+		top: 0;
+		z-index: 5;
+		content: '';
+		width: 100%;
+		height: 5px;
+		background: rgb(0, 166, 255);
+		padding: 0;
+	}
+
+	@media screen and (max-width: $mobile-break) {
+		width: 50%;
+		height: 90vh;
+	}
+}
+
+// Card image container and image styling
+.card-img__container {
+	width: 100%;
+	height: 40%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+}
+
+.img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+// Card content container styling
+.card__content {
+	background: rgba(255, 255, 255, 0.9);
+	position: absolute;
+	bottom: 0;
+	min-height: 60%;
+}
+
+// Title container styling
+.title__container {
+	width: 100%;
+	padding: $element-padding;
+}
+
+.title {
+	color: $primary-color;
+}
+
+// Horizontal line styling
+hr {
+	width: 100%;
+	background: $border-color;
+	outline: none;
+}
+
+// Card text container and text styling
+.text__container {
+	padding: 0.5rem 2rem 0.5rem 3rem;
+	position: relative;
+
+}
+
+// Icon container and icon styling
+.icon__container {
+	background: gray;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	@include flex();
+	position: absolute;
+	top: 0.7rem;
+	left: 1rem;
+}
+
+.icon {
+	color: $primary-backround;
+	font-size: 0.5rem;
+}
+
+// Text content styling
+.p {
+	font-size: 0.9rem;
+}
+
+// Action button container and button styling
+.btn__container {
+	width: 100%;
+	text-align: center;
+	padding: 0.5rem;
+	height: 5rem;
+	@include flex(column, flex-end);
+
+	@media screen and (max-width: $mobile-break) {
+		position: absolute;
+		bottom: 0;
+	}
+}
+
+.btn {
+	outline: none;
+	border: none;
+	background: $btn-background;
+	font-family: Arial, Helvetica, sans-serif;
+	cursor: pointer;
+	color: $primary-color;
+	font-weight: 600;
+	border: 1px solid $border-color;
+	border-radius: 5px;
+	padding: 0.5rem 1rem;
+	font-size: 0.8rem;
+
+	&:hover {
+		filter: brightness(110%);
+	}
+}
